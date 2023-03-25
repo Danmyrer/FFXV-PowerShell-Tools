@@ -14,7 +14,7 @@ A collection of useful PowerShell-Scripts for FFXV-Windows
 |`splitChannels.ps1`| Splits combined textures ( i.e `*_mro_$h.tga` / Metalness / Roughness / Occlusion ) into their own files ( → `*_m_$h.tga` / `*_r_$h.tga` ... )|
 |`combineAlbedoAlpha.ps1`| Combines matching albedo and alpha textures ( `*_b_$h.tga` / `*_a_$h.tga` ) into a single file ( → `*_ba_$h.tga` )
 
-## Usage:
+## Usage
 
 - Place .ps1 script inside the texture directory
 - Inside .ps1 : Change `$removeOriginal = true` if you don't want to remove original files
