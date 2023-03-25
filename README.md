@@ -1,6 +1,6 @@
 # FFXV PowerShell Tools
 
-A collection of useful PowerShell-Scripts for FFXV-Windows
+A collection of useful PowerShell-Scripts for Final Fantasy XV - Windows
 
 ## Requirements
 
