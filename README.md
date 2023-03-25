@@ -1,4 +1,4 @@
-# FFXV Powershell Tools
+# FFXV PowerShell Tools
 
 A collection of useful PowerShell-Scripts for FFXV-Windows
 
