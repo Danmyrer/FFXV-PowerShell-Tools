@@ -9,7 +9,7 @@ $splitChar = "_"
 $albedoName = "b"
 $alphaName = "a"
 
-$removeOriginal = $true
+$removeOriginal = $false
 
 if ($null -eq (Get-Command "magick.exe" -ErrorAction SilentlyContinue))
 {
