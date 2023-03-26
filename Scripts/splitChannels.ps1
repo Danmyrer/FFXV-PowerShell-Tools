@@ -5,7 +5,7 @@ $splitChar = "_"
 $albedoName = "ba"
 $mmName = "mm"
 
-$removeOriginal = $true
+$removeOriginal = $false
 
 if ($null -eq (Get-Command "magick.exe" -ErrorAction SilentlyContinue))
 {
@@ -27,16 +27,12 @@ Get-ChildItem $files -Filter *.tga |
             $tempFullName = $_.FullName
             Write-Output "Processing: $tempFullName"
 
+            magick.exe convert $_.FullName -channel rgb -separate ($texture[0] + '#.tga')
+            
+            # rename _0 _1 to the respective texture name
             for ($i = 0; $i -lt $texture[1].ToCharArray().Length; $i++) {
                 $char = $texture[1].ToCharArray()[$i]
-                
-                switch($i) {
-                    0 { $color = "r" }
-                    1 { $color = "g" }
-                    2 { $color = "b" }
-                }
-
-                magick.exe convert $_.FullName -channel $color -separate ($texture[0] + $splitChar + $char + $fileEnding)
+                Move-Item ($texture[0] + '#-' + $i + '.tga') ($texture[0] + $splitChar + $char + $fileEnding)
             }
 
             if ($removeOriginal) {
